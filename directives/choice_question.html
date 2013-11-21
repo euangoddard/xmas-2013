@@ -1,0 +1,18 @@
+<section class="col-sm-8">
+  <h3>{{ text }}</h3>
+  <ul ng-transclude></ul>
+  <p class="lead text-success" ng-show="is_question_answered && is_correct">
+    That's correct!
+  </p>
+  <p class="lead text-danger" ng-show="is_question_answered && !is_correct">
+    Sorry, that's incorrect! The correct answer was: {{ correct_answer_label }}
+  </p>
+  <button
+    type="button"
+    class="pull-right btn btn-primary"
+    ng-disabled="!is_answer_selected || is_question_answered"
+    ng-click="submit_answer()"
+  >
+    Submit Answer
+  </button>
+</section>

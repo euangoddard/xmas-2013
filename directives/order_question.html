@@ -1,0 +1,34 @@
+<section class="col-sm-8">
+  <h3>{{ text }}</h3>
+  <p class="lead" ng-hide="are_all_answers_selected">
+    Choose the answer you think comes {{ next_selected_position | ordinal }} in
+    the sequence.
+  </p>
+  <p class="lead" ng-show="are_all_answers_selected">
+    If you're happy with the order, press <em>Submit Order</em>.
+  </p>
+  <ul ng-transclude></ul>
+  <p class="lead text-success" ng-show="is_question_answered && is_correct">
+    That's correct!
+  </p>
+  <p class="lead text-danger" ng-show="is_question_answered && !is_correct">
+    Sorry, that's incorrect! The correct order was:
+    {{ ordered_answers | join_properties : "label" }}.
+  </p>
+  <button
+    type="button"
+    class="pull-right btn btn-primary"
+    ng-disabled="!are_all_answers_selected || is_question_answered"
+    ng-click="submit_answer()"
+  >
+    Submit Order
+  </button>
+  <button
+    type="button"
+    class="pull-right btn btn-warning"
+    ng-disabled="is_question_answered"
+    ng-click="clear_selection()"
+  >
+    Clear selection
+  </button>
+</section>

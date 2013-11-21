@@ -1,0 +1,48 @@
+<div class="row">
+  <h2 class="col-sm-10">Question time!</h2>
+  <h2 class="col-sm-2">
+    <button
+      class="btn btn-success btn-block"
+      type="button"
+      ng-show="is_answer_submitted"
+      ng-click="goto_next()"
+    >
+      Next
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </button>
+  </h2>
+</div>
+<div class="row">
+  <p class="col-12 lead">
+    All the questions on the quiz revolve around <em>The Twelve Days of Christmas</em>.
+    Before, you get to the questions, do you know which gifts were sent on which day?
+  </p>
+</div>
+<div class="row">
+  <p class="col-12">
+    Here are the gifts sent on the 12 days, but can you pick the right
+    number for each gift?
+  </p>
+  <ol class="list-unstyled col-12">
+    <li ng-repeat="day in days_randomized">
+      <match-day data="day"></match-day>
+    </li>
+  </ol>
+  <p class="col-sm-8 lead">
+    <span ng-show="is_answer_submitted">
+      You got <strong class="text-success">{{ correct_answer_count }}</strong>
+      right and
+      <strong class="text-danger">{{ incorrect_answer_count }}</strong> wrong!
+    </span>
+    <button
+      type="button"
+      class="pull-right btn btn-primary"
+      ng-click="submit_answer()"
+      ng-disabled="is_answer_submitted"
+    >
+      Submit my answer
+    </button>
+  </p>
+  <p class="col-sm-4">
+  </p>
+</div>

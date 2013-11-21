@@ -1,0 +1,15 @@
+<li>
+  <button
+    class="btn btn-default"
+    ng-class="{ 'btn-success': is_selected }"
+    ng-click="select_answer()"
+    ng-transclude
+    ng-disabled="is_selected">
+  </button>
+  <span
+    ng-show="selected_position"
+    class="label label-default"
+  >
+    {{ selected_position }}
+  </span>
+</li>

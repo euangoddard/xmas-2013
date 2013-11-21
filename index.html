@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Merry Christmas 2013</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/app.css" rel="stylesheet" media="screen">
+  </head>
+  <body ng-app="xmas">
+    <div class="container">
+      <navbar></navbar>
+      <aside class="pull-right">
+        <h3>Score: <span class="label label-info"><score></score></span></h3>
+      </aside>
+      <article ng-view>
+      
+      </article>
+
+      <div class="footer">
+        <p>&copy; Euan Goddard 2013</p>
+      </div>
+
+    </div>
+    
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-cookies.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

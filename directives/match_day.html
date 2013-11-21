@@ -1,0 +1,16 @@
+<span ng-show="is_answer_submitted">
+  <strong class="text-success" ng-show="is_correct">&#x2713;</strong>
+  <strong class="text-danger" ng-hide="is_correct">
+    &#x2717; ({{correct_answer}})
+  </strong>
+</span>
+On the {{ selected_day | ordinal }} day of Christmas, my true love sent to me
+<input
+  type="number"
+  min="1"
+  max="12"
+  step="1"
+  ng-model="selected_day"
+  ng-disabled="is_answer_submitted"
+>
+{{ item }}{{ rest }}
