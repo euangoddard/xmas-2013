@@ -89,7 +89,14 @@
     controllers.controller('QuizController', function ($scope, $location, nsls, ScoreKeeper) {
         if (nsls.get(IS_ORDER_QUESTION_ANSWERED_KEY)) {
             var next_question_id = (nsls.get(FURTHEST_ANSWERED_QUESTION_KEY) || 0) + 1;
-            $location.path('/quiz/' + next_question_id);
+            var new_location;
+            if (!(next_question_id in TWELVE_DAYS)) {
+                new_location = '/add-score/';
+            } else {
+                new_location = '/quiz/' + next_question_id;
+            }
+            $location.path(new_location);
+            return;
         }
         
         ScoreKeeper.reset_score();
@@ -167,11 +174,13 @@
         
         $scope.goto_next = function () {
             var next_id = id + 1;
+            var new_location;
             if (next_id in TWELVE_DAYS) {
-                $location.path('/quiz/' + next_id);
+                new_location = '/quiz/' + next_id;
             } else {
-                throw new Error('Unhandled end of quiz!');
+                new_location = '/add-score/';
             }
+            $location.path(new_location);
         };
     });
 
