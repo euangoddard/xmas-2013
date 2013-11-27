@@ -8,6 +8,7 @@
             'xmas.controllers',
             'xmas.filters',
             'xmas.services',
+            'ngRoute',
             'ngCookies'
         ]
     );
