@@ -1,0 +1,7 @@
+<h1>Add your score</h1>
+<form ng-submit="add_score()">
+	<input type="text" ng-model="score.name" required>
+	<button type="submit" class="btn btn-primary" ng-disabled="is_saving">
+		Add score to scoreboard
+	</button>
+</form>

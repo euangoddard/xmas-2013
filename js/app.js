@@ -8,6 +8,7 @@
             'xmas.controllers',
             'xmas.filters',
             'xmas.services',
+            'xmas.backend',
             'ngRoute',
             'ngCookies'
         ]
@@ -44,6 +45,20 @@
             {
                 templateUrl: 'partials/question.html',
                 controller: 'QuestionController'
+            }
+        );
+        $routeProvider.when(
+            '/add-score',
+            {
+                templateUrl: 'partials/add_score.html',
+                controller: 'AddScoreController'
+            }
+        );
+        $routeProvider.when(
+            '/score-board',
+            {
+                templateUrl: 'partials/score_board.html',
+                controller: 'ScoreBoardController'
             }
         );
         

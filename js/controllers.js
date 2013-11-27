@@ -174,6 +174,29 @@
             }
         };
     });
+
+    controllers.controller('ScoreBoardController', function ($scope, Score) {
+        $scope.is_loading_scores = true;
+        Score.query({s: {value: -1}}, function (scores) {
+            $scope.scores = scores;
+            $scope.is_loading_scores = false;
+        });
+
+        
+    });
+
+    controllers.controller('AddScoreController', function ($scope, $location, Score, ScoreKeeper) {
+        // TODO: Guard against getting here when not allowed
+        $scope.score = {value: ScoreKeeper.get_score()};
+        $scope.is_saving = false;
+
+        $scope.add_score = function () {
+            $scope.is_saving = true;
+            Score.save($scope.score, function () {
+                $location.path('/score-board');
+            });
+        };
+    });
     
     var all = function (array) {
         var all_true = true;
