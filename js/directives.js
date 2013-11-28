@@ -170,7 +170,7 @@
           scope: {},
           link: function (scope, element, attrs, question_controller) {
               scope.position = parseInt(attrs.position, 10);
-              scope.label = element.children(':first').text();
+              scope.label = element.find('button').text();
               
               question_controller.add_answer(scope);
               
