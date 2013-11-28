@@ -195,7 +195,6 @@
     });
 
     controllers.controller('AddScoreController', function ($scope, $location, Score, ScoreKeeper) {
-        // TODO: Guard against getting here when not allowed
         $scope.score = {value: ScoreKeeper.get_score()};
         $scope.is_saving = false;
 
