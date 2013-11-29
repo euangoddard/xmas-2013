@@ -99,7 +99,8 @@
                 return score;
             },
             reset_score: function () {
-                nsls.put('score', 0);
+                score = 0;
+                nsls.put('score', score);
                 broadcast_score_update();
             }
         }
