@@ -194,13 +194,16 @@
         
     });
 
-    controllers.controller('AddScoreController', function ($scope, $location, Score, ScoreKeeper) {
+    controllers.controller('AddScoreController', function ($scope, $location, nsls, Score, ScoreKeeper) {
         $scope.score = {value: ScoreKeeper.get_score()};
         $scope.is_saving = false;
 
         $scope.add_score = function () {
             $scope.is_saving = true;
             Score.save($scope.score, function () {
+                nsls.remove(FURTHEST_ANSWERED_QUESTION_KEY);
+                nsls.remove(IS_ORDER_QUESTION_ANSWERED_KEY);
+                ScoreKeeper.reset_score();
                 $location.path('/score-board');
             });
         };
