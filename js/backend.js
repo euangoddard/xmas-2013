@@ -1,7 +1,7 @@
 (function (angular) {
-	'use strict';
+    'use strict';
 
-	var MONGOLAB_API_URL = 'https://api.mongolab.com/api/1/databases/xmas2013/';
+    var MONGOLAB_API_URL = 'https://api.mongolab.com/api/1/databases/xmas2013/';
     
     var MONGOLAB_API_KEY = '50c48d11e4b012b961327393';
     

@@ -1,9 +1,9 @@
 <h1>High Scores</h1>
 
 <ol ng-if="scores.length">
-	<li ng-repeat="score in scores">
-		{{ score.value }} - {{ score.name }}
-	</li>
+    <li ng-repeat="score in scores">
+        {{ score.value }} - {{ score.name }}
+    </li>
 </ol>
 <p ng-if="!scores.length && !is_loading_scores">There are no high scores yet</p>
 <p ng-if="is_loading_scores">Loading score board</p>
