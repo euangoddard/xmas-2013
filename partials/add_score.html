@@ -1,7 +1,8 @@
-<h1>Add your score</h1>
-<form ng-submit="add_score()">
-	<input type="text" ng-model="score.name" required>
-	<button type="submit" class="btn btn-primary" ng-disabled="is_saving">
-		Add score to scoreboard
-	</button>
+<h1>Add your name to the scoreboard</h1>
+<p class="lead">You scored <ng-pluralize count="score.value" when="{'1': 'one point', 'other': '{} points'}">.
+<form ng-submit="add_score()" name="score_form">
+    <input type="text" ng-model="score.name" required placeholder="Enter your name">
+    <button type="submit" class="btn btn-primary" ng-disabled="is_saving || score_form.$invalid">
+        Add name and score
+    </button>
 </form>
