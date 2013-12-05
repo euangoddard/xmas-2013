@@ -46,7 +46,7 @@
        },
        {
            count: 7,
-           item: 'sawn',
+           item: 'swan',
            rest: '-a-swiming'
        },
        {
