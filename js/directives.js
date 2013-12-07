@@ -3,45 +3,6 @@
     
     var directives = angular.module('xmas.directives', []);
 
-    directives.directive('navbar', function ($route, $location) {
-        var update_scope = function (scope) {
-            var current_location = $location.path();
-            var active_route_label;
-            
-            var navigation_routes = [];
-            angular.forEach($route.routes, function (route, url) {
-                if (route.label) {
-                    var is_active = (current_location === url);
-                    
-                    var navigation_route = {
-                        url: url,
-                        label: route.label,
-                        active: is_active
-                    }
-                    navigation_routes.push(navigation_route);
-                    
-                    if (is_active) {
-                        active_route_label = route.label;
-                    }
-                }
-            });
-            scope.navigation_routes = navigation_routes;
-            scope.active_route_label = active_route_label;
-        };
-        
-        var navbar_directive = {
-            restrict: 'E',
-            templateUrl: 'directives/navbar.html',
-            link: function(scope, element, attrs, ctrl) {
-                update_scope(scope);
-                scope.$on('$routeChangeSuccess', function () {
-                    update_scope(scope);
-                });
-            }
-        };
-        return navbar_directive;
-    });
-    
     directives.directive('choiceQuestion', function () {
         var directive = {
             restrict: 'E',

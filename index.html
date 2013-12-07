@@ -7,16 +7,24 @@
     <link href="css/app.css" rel="stylesheet" media="screen">
   </head>
   <body ng-app="xmas">
+    <header>
+      <h3 class="pull-right">
+        Score: <span class="label label-info"><score></score></span>
+      </h3>
+      <h3 class="muted">Christmas quiz 2013</h3>
+    </header>
     <div class="container">
       <navbar></navbar>
       <aside class="pull-right">
-        <h3>Score: <span class="label label-info"><score></score></span></h3>
       </aside>
       <article ng-view>
       
       </article>
 
       <div class="footer">
+        <p class="pull-right">
+          <a href="#/score-board">Score board</a>
+        </p>
         <p>&copy; Euan Goddard 2013</p>
       </div>
 
