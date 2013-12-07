@@ -83,6 +83,7 @@ body {
   }
 }
 header {
+    color: #777;
     position: fixed;
     top: 0;
     width: 100%;
