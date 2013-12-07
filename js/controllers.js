@@ -139,7 +139,6 @@
             $location.path('/quiz/1');
         };
     });
-    controllers.controller('AboutController', function () {});
     
     controllers.controller('QuestionController', function ($scope, $routeParams, $location, nsls, ScoreKeeper) {
         var id = parseInt($routeParams.id, 10);

@@ -33,14 +33,6 @@
             }
         );
         $routeProvider.when(
-            '/about',
-            {
-                templateUrl: 'partials/about.html',
-                controller: 'AboutController',
-                label: 'About'
-            }
-        );
-        $routeProvider.when(
             '/quiz/:id',
             {
                 templateUrl: 'partials/question.html',
