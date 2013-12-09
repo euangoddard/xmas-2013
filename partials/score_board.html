@@ -1,8 +1,16 @@
+<p class="pull-right">
+	<a href="#/"class="btn btn-success">
+		<span class="glyphicon glyphicon-home"></span>
+		Home
+	</a>
+</p>
+
 <h1>High Scores</h1>
 
 <ol ng-if="scores.length">
     <li ng-repeat="score in scores">
-        {{ score.value }} - {{ score.name }}
+        {{ score.name }}
+        <span class="label label-info">{{ score.value }}</span>
     </li>
 </ol>
 <p ng-if="!scores.length && !is_loading_scores">There are no high scores yet</p>
