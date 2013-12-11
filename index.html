@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/app.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-46327046-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
   </head>
-  <body ng-app="xmas">
+  <body ng-app="xmas" ng-controller="AnalyticsController">
     <header>
       <h3 class="pull-right">
         Score: <span class="label label-info"><score></score></span>
@@ -32,7 +46,7 @@
       </div>
 
     </div>
-    
+
     <script src="js/lib/angular.min.js"></script>
     <script src="js/lib/angular-resource.min.js"></script>
     <script src="js/lib/angular-cookies.min.js"></script>
