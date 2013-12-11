@@ -85,6 +85,12 @@
     var controllers = angular.module('xmas.controllers', []);
     
     controllers.controller('WelcomeController', function () {});
+
+    controllers.controller('AnalyticsController', function ($scope, $location, $window) {
+        $scope.$on('$viewContentLoaded', function () {
+            $window._gaq.push(['_trackPageview', $location.path()]);
+        })
+    });
     
     controllers.controller('QuizController', function ($scope, $location, nsls, ScoreKeeper) {
         if (nsls.get(IS_ORDER_QUESTION_ANSWERED_KEY)) {
